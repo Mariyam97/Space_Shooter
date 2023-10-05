@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #0b0b0b;
+  font-family: "Oribitron", sans-serif;
+}
+
+canvas {
+  display: block;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background-color: black;
+}
+
+#game-over {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: #1d1f21da;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#game-over h2 {
+  color: #00bfff;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 191, 255, 0.5);
+}
+
+#restart {
+  font-size: 1rem;
+  background-color: #00bfff;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.level-popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 32px;
+  color: white;
+  text-align: center;
+  display: none;
+  padding: 10px 20px;
+  animation: glow 1s infinite;
+  background: rgba(0, 166, 255, 0.515);
+  border-radius: 6px;
+  font-family: "Orbitron", sans-serif;
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #00bfff, 0 0 20px #00bfff,
+      0 0 50px #00bfff, 0 0 60px #00bfff;
+  }
+  50% {
+    box-shadow: 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #00bfff, 0 0 25px #00bfff,
+      0 0 30px #00bfff, 0 0 35px #00bfff;
+  }
+}
+
+#settingsPopup {
+  display: none;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  width: 200px; /* Set a fixed width for the settings menu */
+}
+
+.settings-item {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.set-button {
+  margin-bottom: 2px;
+}
+
+#volumeControl {
+  background: transparent;
+  border: 2px solid #00ffff;
+  color: #00ffff;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  border-radius: 5px;
+  width: 160px;
+  max-width: 157px;
+  text-align: center;
+  display: inline-block;
+}
+
+#volumeControl input[type="range"] {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+#volumeControl input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 2px solid #00ffff;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.paused {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  font-size: 24px;
+}
+
+#mainMenu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-family: "Orbitron", sans-serif;
+  text-align: center;
+}
+
+h1 {
+  font-size: 48px;
+  color: #fff;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+}
+
+button {
+  background: transparent;
+  border: 2px solid #00ffff;
+  color: #00ffff;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  border-radius: 5px;
+  width: 200px;
+  max-width: 200px;
+  text-align: center;
+}
+
+button:hover {
+  background-color: rgba(0, 255, 255, 0.1);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 0.8),
+    0 0 30px rgba(0, 255, 255, 0.8);
+}

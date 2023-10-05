@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Space Shooter</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Orbitron&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Press+Start+2P"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <canvas id="game" width="640" height="480" style="display: none"></canvas>
+    <div id="game-over">
+      <h2>Game Over</h2>
+      <button id="restart">Restart</button>
+    </div>
+
+    <div id="mainMenu" style="display: block">
+      <h1>Space Shooter</h1>
+      <button id="levelPlayButton">Arcade Mode</button>
+      <button id="survivalMode">Survival Mode</button>
+    </div>
+
+    <!-- Add this inside the body element -->
+    <div id="settingsPopup" style="display: none">
+      <div class="set-button" id="volumeControl">
+        <label id="volumeText" for="volumeSlider">Volume:</label>
+        <input type="range" id="volumeSlider" min="0" max="100" value="100" />
+      </div>
+      <button class="set-button" id="homeButton">Home</button>
+      <button class="set-button" id="unpauseButton">Unpause</button>
+      <button class="set-button" id="restartButton">Restart</button>
+    </div>
+
+    <div id="level-popup" class="level-popup">Level 1</div>
+    <!-- <h1 id="start-button" class="start-button">Press Space to Play</h1> -->
+
+    <video id="video-background" style="display: none" loop autoplay muted>
+      <source src="bg.mp4" type="video/mp4" />
+    </video>
+
+    <img id="spaceship" src="ship.png" style="display: none" />
+    <img id="target-image" src="target.png" style="display: none" />
+    <img id="target-image-2" src="enemy-2.png" style="display: none" />
+
+    <img id="laser-beam" src="laser-beam.png" style="display: none" />
+    <img id="power-up-image" src="power-up.png" style="display: none" />
+
+    <audio id="laser-sound" src="laser-sound.wav"></audio>
+    <audio id="explosion-sound" src="explosion-sound.mp3"></audio>
+    <audio id="background-music" src="bgmusic.wav" loop></audio>
+    <audio id="game-over-sound" src="gameover.mp3"></audio>
+    <audio id="damageSound" src="damage.mp3"></audio>
+
+    <div id="paused-message" class="paused">Paused</div>
+    <script src="constants.js"></script>
+    <script src="globalVariables.js"></script>
+    <script src="classes.js"></script>
+    <script src="functions.js"></script>
+    <script src="eventListeners.js"></script>
+    <script src="game.js"></script>
+  </body>
+</html>
